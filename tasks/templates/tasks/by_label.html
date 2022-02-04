@@ -1,0 +1,15 @@
+{% extends "layout/basic.html" %}
+
+{% block title %}{{current_label}}{% endblock %}
+
+{% block content %}
+<h2>Метка: {{current_label}}</h2>
+    {% for tk in tsk %}
+    <div>
+        <h2>{{tk.task}}</h2>
+        <p>{{ tk.start }}</p>
+        <p>{{ tk.end }}</p>
+        <p>{{tk.comment}}</p>
+    </div>
+    {% endfor %}
+{% endblock %}

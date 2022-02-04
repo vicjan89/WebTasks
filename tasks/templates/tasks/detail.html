@@ -1,0 +1,26 @@
+<form action="" method="post">
+{% csrf_token %}
+<fieldset>
+    <legend><h1>{{ task }}</h1></legend>
+    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+        <label> Задача </label>
+        <input align=right size="40" type="text" value="{{ task.task }}"> <br>
+        <label> Начало </label>
+        <input type="datetime-local" value="{{ task.start }}"> <br>
+        <label> Окончание </label>
+        <input type="text" value="{{ task.end }}"> <br>
+        <label> Режим повторения </label>
+        <input type="text" value="{{ task.repeat_mode }}"> <br>
+        <label> Важность </label>
+        <input type="checkbox" value="{{ task.priority }}"> <Br>
+        <label> Комментарий </label>
+        <input type="text" size="50" value="{{ task.comment }}"> <br>
+        <label> Трудоёмкость </label>
+        <input type="number" size="50" value="{{ task.duration }}"> <br>
+        <label> Жёсткая задача </label>
+        <input type="checkbox" value="{{ task.hard }}"> <Br>
+        <label> Прогресс выполнения </label>
+        <input type="range" value="{{ task.progress }}">
+</fieldset>
+<input type="submit" value="Сохранить">
+</form>

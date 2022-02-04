@@ -1,0 +1,26 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Главная{% endblock %} :: Планировщик задач</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'tasks/style.css' %}">
+</head>
+<body>
+    <header>
+      <h1>Задачи</h1>
+    </header>
+    <nav>
+      <a href="{% url 'index' %}">Главная</a>
+      <a href="{% url 'add' %}">Добавить</a>
+      {% for label in lbls %}
+      <a href="{% url 'by_label' label.pk %}">{{ label }}</a>
+      {% endfor %}
+    </nav>
+    <section>
+      {% block content %}
+      {% endblock %}
+    </section>
+</body>
+</html>
