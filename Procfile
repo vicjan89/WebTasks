@@ -1,1 +1,1 @@
-web: gunicorn WebTasks.WebTasks.wsgi --log-file -
+web: gunicorn WebTasks.wsgi --log-file -
