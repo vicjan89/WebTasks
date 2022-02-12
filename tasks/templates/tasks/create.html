@@ -1,12 +1,14 @@
 {% extends "layout/basic.html" %}
 
-{% block title %}Добавление задачи{% endblock %}
+{% block title %}Добавление или изменение задачи{% endblock %}
 
 {% block content %}
-<h2>Добавление задачи</h2>
+<h2>Добавление или изменение задачи</h2>
     <form method="post">
       {% csrf_token %}
-      {{ form.as_p }}
-      <input type="submit" value="Добавить">
+        <table>
+      {{ form.as_table }}
+            </table>
+      <input type="submit" name="ok" value="Ok"> <input type="submit" name="delete" value="Удалить">
     </form>
 {% endblock %}

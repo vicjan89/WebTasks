@@ -3,11 +3,19 @@
 {% block content %}
 {% for tsk in tasks_list %}
     <div>
-        <h2>{{ tsk.task }}</h2>
-        <p>{{ tsk.start }}</p>
-        <p>{{ tsk.end }}</p>
-        <p>{{ tsk.comment }}</p>
-        <p><a href="{% url 'by_label' tsk.label.pk %}">{{ tsk.label }}</a> </p>
+        <a href="{% url 'edit' tsk.pk %}">{{forloop.counter}} {{ tsk.task }} {{ tsk.comment }}</a>
+        <p>
+            От <a class="datetime">{{ tsk.start }}</a> до <a class="datetime">{{ tsk.end }}</a>
+            {% if tsk.priority %}
+            <a class="prior">Важно</a>
+            {% endif %}
+            {% if tsk.hard %}
+            <a class="hard">Жёсткая</a>
+            {% endif %}
+        {% for lbl in tsk.label.all %}
+            <a class="label">{{ lbl.label }}</a>
+        {% endfor %}
+        </p>
     </div>
 {% endfor %}
 {% endblock %}

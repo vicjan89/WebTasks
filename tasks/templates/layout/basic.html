@@ -13,7 +13,8 @@
     </header>
     <nav>
       <a href="{% url 'index' %}">Главная</a>
-      <a href="{% url 'add' %}">Добавить</a>
+      <a href="{% url 'attachment' %}">Вложения</a>
+      <a href="{% url 'add' %}">Добавить задачу</a>
       {% for label in lbls %}
       <a href="{% url 'by_label' label.pk %}">{{ label }}</a>
       {% endfor %}

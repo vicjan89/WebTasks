@@ -5,7 +5,7 @@ header h1 {
     background: url("bg.jpg") left / auto 100% no-repeat;
     }
 nav {
-    font-size: 16pt;
+    font-size: 14pt;
     width: 150px;
     float: left;
     }
@@ -15,4 +15,58 @@ nav a {
     }
 section {
     margin-left: 170px;
+    }
+.label {
+    background-color: #ff1a00;
+    border-radius: 4px;
+    border: none;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 2px 2px;
+    }
+.prior {
+    background-color: #1C19B4;
+    border: 1;
+    border-radius: 4px;
+    border-color: #0;
+    border-width: 1px;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 2px 2px;
+    }
+.hard {
+    background-color: #FA03D5;
+    border: 1;
+    border-radius: 4px;
+    border-color: #0;
+    border-width: 1px;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 2px 2px;
+    }
+.datetime {
+    background-color: #83ff1d;
+    border: 1;
+    border-radius: 4px;
+    border-color: #0;
+    border-width: 1px;
+    color: black;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 2px 2px;
     }

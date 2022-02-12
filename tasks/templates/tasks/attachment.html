@@ -1,0 +1,10 @@
+{% extends "layout/basic.html" %}
+
+{% block content %}
+{% for at in attach %}
+    <div>
+        <h3>{{ at }}</h3>
+        <img src=at.picture.path>
+    </div>
+{% endfor %}
+{% endblock %}
