@@ -18,6 +18,8 @@
       {% for label in lbls %}
       <a href="{% url 'by_label' label.pk %}">{{ label }}</a>
       {% endfor %}
+        <a href="{% url 'password_change' %}">Изменить пароль</a>
+        <a href="{% url 'logout' %}">Выход</a>
     </nav>
     <section>
       {% block content %}
