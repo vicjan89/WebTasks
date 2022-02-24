@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 class Task(models.Model):
@@ -20,6 +21,7 @@ class Task(models.Model):
     progress = models.IntegerField(verbose_name='Прогресс выполнения', null=True, blank=True)
     label = models.ManyToManyField('Label', blank=True, null=True,verbose_name='Метка')
     attachment = models.ManyToManyField('Attachment', blank=True, null=True, verbose_name='Вложение')
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
 
     #   child_tasks = List_tasks()
 
@@ -27,7 +29,7 @@ class Task(models.Model):
         return self.task
 
     def get_absolute_url(self):
-        return reverse('detail', args=[str(self.id)])
+        return reversed('detail', args=[str(self.id)])
 
     class Meta:
         verbose_name_plural = 'Задачи'

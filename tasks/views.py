@@ -18,13 +18,18 @@ class TaskCreateView(LoginRequiredMixin, CreateView):
         context['label'] = Label.objects.all()
         return context
 
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super(TaskCreateView, self).form_valid(form)
+
 class TaskDetaiView(LoginRequiredMixin, DetailView):
     model = Task
     template_name = 'tasks/detail.html'
 
 @login_required
 def index(request):
-        tasks_list = Task.objects.all()
+        print(request.user)
+        tasks_list = Task.objects.filter(user=request.user)
         lbls = Label.objects.all()
         context = {
             'tasks_list': tasks_list,

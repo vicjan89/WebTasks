@@ -1,10 +1,9 @@
 from django.contrib import admin
-
 from .models import Task, Attachment, Label
 
 
 class TaskAdmin(admin.ModelAdmin):
-    list_display = ('task', 'start', 'end', 'comment')
+    list_display = ('user', 'task', 'start', 'end', 'comment')
     list_display_links = ('task', 'comment')
     search_fields = ('task', 'start')
 

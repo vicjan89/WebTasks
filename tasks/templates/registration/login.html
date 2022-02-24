@@ -12,6 +12,7 @@
     {{ form.as_table }}
     <input type="hidden" name="next" value="{{ next }}">
     <input type="submit" value="Войти">
+    <p>Для тестирования приложения войдите с логином user и паролем a123456@</p>
 </form>
 <a href="{% url 'password_reset' %}">Сброс пароля</a>
 {% endif %}
